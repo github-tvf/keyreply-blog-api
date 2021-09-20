@@ -41,7 +41,6 @@ export class BlogController {
   }
 
   @Get(':id')
-  @UseGuards(AuthGuard)
   async getBlog(@Param('id', ParseUUIDPipe) blogId: string): Promise<Blog> {
     return this.blogService.getBlog(blogId)
   }
